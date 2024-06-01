@@ -8,7 +8,7 @@ name = en_zh("Better Crash Screen","更好的崩溃提示")
 
 author = "Niko"
 
-version = "2.13.0"
+version = "2.18.0"
 
 config = true
 -- Language = "en"
@@ -62,6 +62,40 @@ modinfo_ver = "2.1"
 if config == true then
 	--Config
 	configuration_options = {
+
+		Title(en_zh("Mod Saving","保存模组"), "Saved Mod settings"),
+		{
+			name = "autoapply",
+			label = en_zh("Auto Enable Mods","自动启用Mod"),
+			hover = en_zh("Auto Enables Mods\n(Instead of Popup Dialog)","自动启用mod\n(而不是弹出对话框)"),
+			options = {
+				{ description = en_zh("Enabled","启用"), data = 1 },
+				{ description = en_zh("Disabled","禁用"), data = 0 },
+			},
+			default = 0,
+		},
+
+		{
+			name = "autoapply_mim",
+			label = en_zh("Auto Enable MiM Mods","自动启用MiMi模组"),
+			hover = "Auto Enables Mods in Menu Mods\n(Instead of Popup Dialog)",
+			options = {
+				{ description = en_zh("Enabled","启用"), data = 1 },
+				{ description = en_zh("Disabled","禁用"), data = 0 },
+			},
+			default = 0,
+		},
+
+		{
+			name = "savemodspos",
+			label = en_zh("Save Mods Button Position","\"保存已启用的mod\"按钮位置"),
+			hover = en_zh("Changes position of Save Mods","设置\"保存已启用的mod\"的位置"),
+			options = {
+				{ description = en_zh("Top Left","左上角"), data = 1 },
+				{ description = en_zh("Next to Apply","\"应用\"按钮的左边"), data = 0 },
+			},
+			default = 0,
+		},
 
 		Title(en_zh("Language","语言"), en_zh("Pick langauge","选择语言")),
 		{
@@ -125,7 +159,6 @@ if config == true then
 				{ description = en_zh("Tradein guy font","交易小店字体"), data = "TALKINGFONT_TRADEIN" },
 				{ description = en_zh("Hermit's font","寄居蟹隐士字体"), data = "TALKINGFONT_HERMIT" },
 				{ description = "PT Mono", data = "PTMONO" },
-				{ description = en_zh("Wildcard","通用字体"), data = "BETTERCRASHSCREEN_FONT_WILDCARD" },
 			},
 			default = 0,
 		},
@@ -276,32 +309,26 @@ elseif write_contributors == true then
 end
 
 --Description Components 描述组件
-desc = en_zh(
-	"Improves the crash screen to give more detailed information and makes it easier to understand.",
-	"改进了崩溃提示页面，以提供更详细的信息，使其更容易理解。")
+	desc = en_zh(
+		"Improves the crash screen to give more detailed information and makes it easier to understand.",
+		"改进了崩溃提示页面，以提供更详细的信息，使其更容易理解。")
 
-changelog = en_zh(
+	changelog = en_zh(
 
 -- English translation
 [[󰀏 What's New:
-󰀈 Add Chinese translation!
 
-v2.12.0:
-󰀈 AutoSave mods now has PT translation
-󰀈 AutoSave mods works with MiM Mods
+󰀈 Add Chinese translation
+
+
 ]],
 
 -- Chinese translation
 [[󰀏 最近更新：
 
-v2.13.0：
-󰀈 添加中文翻译！
+ 󰀈 新增中文翻译]])
 
-v2.12.0：
-󰀈 自动保存现在有PT翻译
-󰀈 自动保存现在兼容MiM模组]])
-
---copyright = "Copyright © 2020 "..old_author
+	--copyright = "Copyright © 2020 "..old_author
 credits = en_zh("󰀭 Credits:","󰀭 致谢") .. " " .. contributors
 mark2 = en_zh("󰀩 Modinfo Version:","󰀩 Modinfo 版本:") .. " " .. modinfo_ver
 
