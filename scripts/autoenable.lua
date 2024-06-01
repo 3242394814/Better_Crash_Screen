@@ -232,12 +232,12 @@ AddClassPostConstruct("screens/redux/mainscreen", function(self, ...)
             local dialogue = PopupDialogScreenRedux((is_mim_enabled and not isenabled_mim) and STRINGS.UI.MAINSCREEN.BETTERCRASHSCREEN[TUNING.BETTECRASHSCREEN_LANGUAGE].TITLE_MIMMODSDISABLED or STRINGS.UI.MAINSCREEN.BETTERCRASHSCREEN[TUNING.BETTECRASHSCREEN_LANGUAGE].TITLE_NORMALMODSDISABLED,
                     (is_mim_enabled and not isenabled_mim) and STRINGS.UI.MAINSCREEN.BETTERCRASHSCREEN[TUNING.BETTECRASHSCREEN_LANGUAGE].MIMMODSDISABLED or STRINGS.UI.MAINSCREEN.BETTERCRASHSCREEN[TUNING.BETTECRASHSCREEN_LANGUAGE].NORMALMODSDISABLED, {
                     {
-                        text = "Yes",
+                        text = STRINGS.UI.MAINSCREEN.YES,
                         cb = function()
                             EnableDemMods(v)
                         end
                     }, {
-                    text = "No",
+                    text = STRINGS.UI.MAINSCREEN.NO,
                     cb = function()
                         TheFrontEnd:PopScreen()
                     end
